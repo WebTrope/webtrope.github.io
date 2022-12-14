@@ -2,17 +2,17 @@
 function FirstCTA() {
   return (
     <section
-      className='bg-white dark:bg-gray-900/50 backdrop-blur-sm text-justify'
+      className='bg-white dark:bg-gray-900/50 backdrop-blur-sm '
       id='cta1'
     >
       <div className='gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6'>
         <img
-          className='w-full dark:hidden'
+          className='w-full dark:hidden py-4'
           src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80'
           alt='dashboard image'
         />
         <img
-          className='w-full hidden dark:block'
+          className='w-full hidden dark:block py-4'
           src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80'
           alt='dashboard image'
         />
@@ -20,7 +20,7 @@ function FirstCTA() {
           <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
             {"Let's make you a website"}
           </h2>
-          <p className='mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400'>
+          <p className='mb-6 font-light text-justify text-gray-500 md:text-lg dark:text-gray-400'>
             Our team of experts will work with you to create a visually stunning
             and user-friendly website that perfectly captures your unique
             vision. Contact us today to get started on your new website and take
