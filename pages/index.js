@@ -17,7 +17,7 @@ function App() {
         />
         <link rel='icon' href='https://github.com/webtrope.png' />
       </Head>
-      <main className='min-h-screen dark:bg-main'>
+      <main className='min-h-screen dark:bg-main flex justify-between flex-col'>
         <section className='bg-white dark:bg-main'>
           <Header />
           <div className='py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12'>

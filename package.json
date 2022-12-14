@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@material-tailwind/react": "^1.2.4",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.43.2",
+    "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",

@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 
+import { Button, Navbar } from "flowbite-react";
+
 function App() {
-  return (
+  const one = (
     <>
       <nav className='font-sans bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-transparent '>
         <div className='container flex flex-wrap items-center justify-between mx-auto'>
@@ -23,12 +25,13 @@ function App() {
             >
               Get started
             </button>
+
             <button
-              data-collapse-toggle='navbar-cta'
+              data-collapse-toggle='navbar-default'
               type='button'
-              className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
-              aria-controls='navbar-cta'
-              aria-expanded='false'
+              className='inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+              aria-controls='navbar-default'
+              aria-expanded='true'
             >
               <span className='sr-only'>Open main menu</span>
               <svg
@@ -80,6 +83,41 @@ function App() {
         </div>
       </nav>
     </>
+  );
+
+  return (
+    <Navbar
+      fluid={true}
+      className='
+    dark:bg-nav
+    '
+    >
+      <Navbar.Brand href='/'>
+        <img
+          src='https://github.com/webtrope.png'
+          className='mr-3 h-6 sm:h-9'
+          alt='webtrope logo'
+        />
+        <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>
+          WebTrope
+        </span>
+      </Navbar.Brand>
+      <div className='flex md:order-2'>
+        <Button
+          onClick={() => {
+            window.location.href = "/contact";
+          }}
+        >
+          Get started
+        </Button>
+        <Navbar.Toggle />
+      </div>
+      <Navbar.Collapse>
+        <Navbar.Link href='/'>Home</Navbar.Link>
+        <Navbar.Link href='/about'>About</Navbar.Link>
+        <Navbar.Link href='/contact'>Contact</Navbar.Link>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
