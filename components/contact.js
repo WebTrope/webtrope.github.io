@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import Head from "next/head";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Alert, Button, Spinner } from "flowbite-react";
 import emailjs from "@emailjs/browser";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect } from "react";
 
 function Contact() {
   const [email, setEmail] = useState("");
@@ -17,9 +15,11 @@ function Contact() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
 
+  // animate 'title' and 'contactform'
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
-      ".heading",
+      ".title",
       {
         opacity: 0,
         y: -100,
@@ -28,41 +28,37 @@ function Contact() {
         opacity: 1,
         y: 0,
         duration: 1,
+        scrollTrigger: {
+          trigger: ".title",
+          start: "top 90%",
+        },
       }
     );
-    gsap.fromTo(
-      ".formitself",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-      }
-    );
+    gsap
+      .fromTo(
+        ".contactform",
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".contactform",
+            start: "top 90%",
+          },
+        }
+      )
+      .delay(0.5);
   }, []);
 
   return (
     <>
       <>
-        <Head>
-          <title>Contact Us</title>
-          <meta
-            name='description'
-            content='Have a mind-blowing attractive and personalised website built in a short time. For you.'
-          />
-          <link rel='icon' href='https://github.com/webtrope.png' />
-        </Head>
-
         <main className='dark min-h-screen dark:bg-main flex justify-between flex-col'>
-          <TawkMessengerReact
-            propertyId='639b6c92daff0e1306dcdc30'
-            widgetId='1gkbi07ll'
-          />
           <section className='dark bg-gray-50 dark:bg-main'>
-            <Header />
             {isFailure && (
               <Alert
                 color='failure'
@@ -98,10 +94,10 @@ function Contact() {
                 </span>
               </Alert>
             )}
-            <div className=' flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
+            <div className='title flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
               <a
                 href='#'
-                className='heading flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white'
+                className='flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white'
               >
                 <img
                   className='w-8 h-8 mr-2
@@ -113,8 +109,8 @@ function Contact() {
                 />
                 Get Your Site Made
               </a>
-              <div className='formitself w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/50 dark:border-gray-700 backdrop-blur-sm'>
-                <div className=' p-6 space-y-4 md:space-y-6 sm:p-8'>
+              <div className='contactform w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/50 dark:border-gray-700 backdrop-blur-sm'>
+                <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
                   <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white'>
                     Let's Start Working Together
                   </h1>
@@ -214,7 +210,6 @@ function Contact() {
               </div>
             </div>
           </section>
-          <Footer />
         </main>
       </>
     </>

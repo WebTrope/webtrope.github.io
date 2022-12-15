@@ -8,10 +8,14 @@ module.exports = {
     "./node_modules/flowbite-react/**/*.js",
   ],
 
-  darkMode: "media",
+  darkMode: "class",
 
   plugins: [require("flowbite/plugin")],
   theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+      serif: ["Roboto Serif", "serif"],
+    },
     extend: {
       spacing: {
         128: "32rem",

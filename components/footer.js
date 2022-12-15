@@ -14,10 +14,10 @@ function Footer() {
           />
           WebTrope
         </a>
-        <p className='my-6 text-gray-500 dark:text-gray-400'>
+        <div className='my-6 text-gray-500 dark:text-gray-400'>
           A web development agency that specializes in creating dynamic and
           static websites at an affordable price.
-        </p>
+        </div>
 
         <span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
           © 2022{" "}

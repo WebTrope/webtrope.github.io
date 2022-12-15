@@ -20,12 +20,12 @@ function FirstCTA() {
           <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
             {"Let's make you a website"}
           </h2>
-          <p className='mb-6 font-light text-justify text-gray-500 md:text-lg dark:text-gray-400'>
+          <div className='mb-6 font-light text-justify text-gray-500 md:text-lg dark:text-gray-400'>
             Our team of experts will work with you to create a visually stunning
             and user-friendly website that perfectly captures your unique
             vision. Contact us today to get started on your new website and take
             the first step towards boosting your online presence.
-          </p>
+          </div>
           <button
             type='button'
             className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
