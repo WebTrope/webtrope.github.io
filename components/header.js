@@ -71,21 +71,25 @@ function Header() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link className='nav-one' href='/'>
-            Home
+          <Navbar.Link href='/' className='nav-one group'>
+            <span class='bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>
+              Home
+            </span>
           </Navbar.Link>
-          <Navbar.Link className='nav-two' href='/about'>
-            About
+          <Navbar.Link className='nav-two group' href='/about'>
+            <span class='bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>
+              About
+            </span>
           </Navbar.Link>
-          <Navbar.Link className='nav-three' href='/contact'>
-            Contact
+          <Navbar.Link className='nav-three group' href='/contact'>
+            <span class='bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>
+              Contact
+            </span>
           </Navbar.Link>
-          {/*<Navbar.Link className='nav-four' href='/gallery'>
-            Examples
-          </Navbar.Link>
-            */}
-          <Navbar.Link className='nav-four' href='/examples'>
-            Examples
+          <Navbar.Link className='nav-four group' href='/examples'>
+            <span class='bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>
+              Examples
+            </span>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>

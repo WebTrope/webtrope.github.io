@@ -129,7 +129,7 @@ function Card(props) {
         {image}
       </div>
       <div className='p-5'>
-        <a href='#'>
+        <a href={link}>
           <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
             {title}
           </h5>
