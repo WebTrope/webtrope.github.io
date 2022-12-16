@@ -82,7 +82,7 @@ function App() {
           <Header />
           <div className='min-h-screen py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 flex flex-col justify-center align-center'>
             <div>
-              <h1 className='mainheading mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
+              <h1 className='gradient mainheading mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
                 We transform your vision online.
               </h1>
               <div className='maintext mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400'>

@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function Services() {
   useEffect(() => {
@@ -98,7 +99,14 @@ function Services() {
               title='Development'
               description='
               We write clean, efficient and maintainable code very carefully to make your website fast and responsive. This is done for a one time fee.'
-              icon='/webdev.svg'
+              icon={
+                <Player
+                  autoplay
+                  loop
+                  src='https://lottie.host/1960e120-4686-4edb-a4e7-c4056a946d67/WfEAxotIbk.json'
+                  style={{ height: "300px", width: "300px" }}
+                ></Player>
+              }
               className='devcard'
             />
             <Card
@@ -110,7 +118,14 @@ function Services() {
               }
               description='
                 We provide hosting services for your website. We also provide domain name registration. This is done as a subscription service.'
-              icon='/hosting.svg'
+              icon={
+                <Player
+                  autoplay
+                  loop
+                  src='https://lottie.host/e81c1e9d-e99e-4e12-93df-175257c9e919/uoCBQTG120.json'
+                  style={{ height: "300px", width: "300px" }}
+                ></Player>
+              }
               className='hostcard'
             />
           </div>
@@ -158,13 +173,9 @@ function Card(props) {
         className
       }
     >
-      <a href='#'>
-        <img
-          className='rounded-t-lg px-24 py-12 fill-indigo-900'
-          src={icon}
-          alt=''
-        />
-      </a>
+      <div className='rounded-t-lg flex justify-center align-center'>
+        {icon}
+      </div>
       <div className='p-5'>
         <a href='#'>
           <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>

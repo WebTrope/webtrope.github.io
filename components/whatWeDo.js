@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function WhatWeDo() {
   useEffect(() => {
@@ -85,9 +86,9 @@ function WhatWeDo() {
     <>
       <section
         id='whatwedo'
-        className='min-h-screen bg-slate-100 dark:bg-slate-700/10 p-12 flex flex-col '
+        className='min-h-screen w-full bg-slate-100 dark:bg-slate-700/10 p-12 flex flex-col '
       >
-        <div className='gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl  sm:py-16 lg:px-6'>
+        <div className='gap-8 items-center py-8 px-4 mx-auto sm:py-16 lg:px-6'>
           <h1 className='whatwedoheading mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-indigo-200 '>
             What We Do
           </h1>
@@ -95,24 +96,48 @@ function WhatWeDo() {
         <div className='flex flex-col justify-center grow'>
           <div className='grid grid-cols-auto gap-8 place-items-center w-full sm:px-6 lg:px-8 lg:grid-cols-3'>
             <Card
-              title='High performance websites'
+              title='Quick loading'
               description='
-               We use server side rendering for dynamic websites. This improves the performance of your website and makes your website discoverable on search engines and bots.'
-              icon='/ssr.svg'
+              We make your clients happy by making your website load faster. We use modern frameworks like Next.js to make your website load faster. 
+              '
+              icon={
+                <Player
+                  autoplay
+                  loop
+                  src='https://lottie.host/45666c7a-3cd2-4f5d-b98c-8f670cf24777/dR9m6k3cdX.json'
+                  style={{ height: "300px", width: "300px" }}
+                ></Player>
+              }
               className='ssrcard'
             />
             <Card
               title='Increase discovery'
               description='
-              We use SSR, specific keywords and phrases to make your website discoverable on search engines and bots.'
-              icon='/increase.svg'
+                We help you increase your website traffic by making your website SEO friendly. We use modern frameworks like Next.js to make your website SEO friendly.
+              '
               className='seocard'
+              icon={
+                <Player
+                  autoplay
+                  loop
+                  src='https://lottie.host/3b1737e7-d096-4180-9d12-f784f534be5a/n9Mkels5t5.json'
+                  style={{ height: "300px", width: "300px" }}
+                ></Player>
+              }
             />
             <Card
-              title='Dynamic websites'
+              title='Make your clients interact'
               description='
-               We use modern frameworks like Next.js to build dynamic websites. This makes your website more interactive and user friendly.'
-              icon='/next.svg'
+                We help you make your clients interact with your website by making your website dynamic. We use modern frameworks like Next.js to make your website dynamic.
+              '
+              icon={
+                <Player
+                  autoplay
+                  loop
+                  src='https://lottie.host/34727fb2-e4d9-4952-b879-0ff98bfb3804/r79Z4GGV0W.json'
+                  style={{ height: "300px", width: "300px" }}
+                ></Player>
+              }
               className='dyncard'
             />
           </div>
@@ -160,9 +185,9 @@ function Card(props) {
         className
       }
     >
-      <a href='#'>
-        <img className='rounded-t-lg px-24 py-12' src={icon} alt='' />
-      </a>
+      <div className='rounded-t-lg flex justify-center align-center'>
+        {icon}
+      </div>
       <div className='p-5'>
         <a href='#'>
           <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
