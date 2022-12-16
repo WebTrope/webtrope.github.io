@@ -1,18 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
+import { Button } from "flowbite-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
 
-function WhatWeDo() {
+function Examples() {
   useEffect(() => {
     // gsap scroll trigger
     gsap.registerPlugin(ScrollTrigger);
     gsap.core.globals("ScrollTrigger", ScrollTrigger);
     // gsap animation
     gsap.fromTo(
-      ".whatwedoheading",
+      ".examplesheading",
       {
         opacity: 0,
         x: -100,
@@ -23,14 +23,13 @@ function WhatWeDo() {
         duration: 1,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".whatwedoheading",
+          trigger: ".examplesheading",
           start: "top 80%",
         },
       }
     );
-
     gsap.fromTo(
-      ".ssrcard",
+      ".card1",
       {
         opacity: 0,
         y: 100,
@@ -41,13 +40,13 @@ function WhatWeDo() {
         duration: 1,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".ssrcard",
+          trigger: ".card1",
           start: "top 80%",
         },
       }
     );
     gsap.fromTo(
-      ".seocard",
+      ".card2",
       {
         opacity: 0,
         y: 100,
@@ -55,27 +54,10 @@ function WhatWeDo() {
       {
         opacity: 1,
         y: 0,
-        duration: 3,
+        duration: 2,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".seocard",
-          start: "top 80%",
-        },
-      }
-    );
-    gsap.fromTo(
-      ".dyncard",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 5,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".dyncard",
+          trigger: ".card2",
           start: "top 80%",
         },
       }
@@ -85,63 +67,50 @@ function WhatWeDo() {
   return (
     <>
       <section
-        id='whatwedo'
+        id='examples'
         className='min-h-screen w-full bg-slate-100 dark:bg-slate-700/10 p-12 flex flex-col '
       >
         <div className='gap-8 items-center py-8 px-4 mx-auto sm:py-16 lg:px-6'>
-          <h1 className='whatwedoheading mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-indigo-200 '>
-            What We Do
+          <h1 className='examplesheading mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-indigo-200 '>
+            Examples
           </h1>
         </div>
+
         <div className='flex flex-col justify-center grow'>
-          <div className='grid grid-cols-auto gap-8 place-items-center w-full sm:px-6 lg:px-8 lg:grid-cols-3'>
+          <div className='grid grid-cols-auto gap-12 place-items-center w-full sm:px-6 lg:px-8 lg:grid-cols-2'>
             <Card
-              title='Quick loading'
-              description='
-              We make your clients happy by making your website load faster. We use modern frameworks like Next.js to achieve this. 
-              '
-              icon={
-                <Player
-                  autoplay
-                  loop
-                  src='https://lottie.host/45666c7a-3cd2-4f5d-b98c-8f670cf24777/dR9m6k3cdX.json'
-                  style={{ height: "300px", width: "300px" }}
-                ></Player>
+              title='Example Artist Website'
+              description='This is an example of a website for an artist. Features server-side rendering, a contact form, and entry animations'
+              link='https://lorem-artist.vercel.app/'
+              image={
+                <img
+                  className='rounded-t-lg shadow-lg cursor-pointer'
+                  src='/lorem-artist.png'
+                  alt='artist website'
+                  onClick={() =>
+                    window.open("https://lorem-artist.vercel.app/")
+                  }
+                />
               }
-              className='ssrcard'
+              className='card1'
             />
             <Card
-              title='Increase discovery'
-              description='
-                We help you increase your website traffic by making your website SEO friendly. We use modern frameworks like Next.js to do this while maintaining modern features.
-              '
-              className='seocard'
-              icon={
-                <Player
-                  autoplay
-                  loop
-                  src='https://lottie.host/3b1737e7-d096-4180-9d12-f784f534be5a/n9Mkels5t5.json'
-                  style={{ height: "300px", width: "300px" }}
-                ></Player>
+              title='WebTrope Landing Page'
+              description='Our landing page for WebTrope, this is an example of a modern landing page. Features server-side rendering, a contact form, and scroll animations'
+              link='https://webtrope.github.io/'
+              image={
+                <img
+                  className='rounded-t-lg shadow-lg cursor-pointer'
+                  src='/webtrope.png'
+                  alt='main website'
+                  onClick={() => window.open("https://webtrope.github.io/")}
+                />
               }
-            />
-            <Card
-              title='Make your clients interact'
-              description='
-                We help you make your clients interact with your website by making your website dynamic. We use modern frameworks like Next.js to offer the amazing experience your clients expect.
-              '
-              icon={
-                <Player
-                  autoplay
-                  loop
-                  src='https://lottie.host/34727fb2-e4d9-4952-b879-0ff98bfb3804/r79Z4GGV0W.json'
-                  style={{ height: "300px", width: "300px" }}
-                ></Player>
-              }
-              className='dyncard'
+              className='card2'
             />
           </div>
         </div>
+
         <div className='mainicon flex flex-col mt-16 my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
           <button
             onClick={() => {
@@ -176,28 +145,37 @@ function WhatWeDo() {
 }
 
 function Card(props) {
-  const { title, description, icon, className } = props;
+  const { title, description, link, image, className } = props;
   return (
     <div
       className={
-        "h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-main dark:border-gray-700 flex flex-col justify-around" +
+        "h-full w-full bg-white border border-gray-200 rounded-lg shadow-md dark:bg-main dark:border-gray-700 flex flex-col justify-between" +
         " " +
         className
       }
     >
       <div className='rounded-t-lg flex justify-center align-center'>
-        {icon}
+        {image}
       </div>
       <div className='p-5'>
-        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-          {title}
-        </h5>
+        <a href='#'>
+          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+            {title}
+          </h5>
+        </a>
         <p className='text-justify mb-3 font-normal text-lg text-gray-700 dark:text-gray-400'>
           {description}
         </p>
+        <Button
+          onClick={() => {
+            window.open(link);
+          }}
+        >
+          View
+        </Button>
       </div>
     </div>
   );
 }
 
-export default WhatWeDo;
+export default Examples;

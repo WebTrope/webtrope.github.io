@@ -1,18 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import FirstCTA from "../components/cta1";
-import SecondCTA from "../components/cta2";
-import ThirdCTA from "../components/cta3";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import WhatWeDo from "../components/whatWeDo";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Services from "../components/services";
 import Contact from "../components/contact";
+import Examples from "../components/examples";
+import { Button } from "flowbite-react";
 
 function App() {
+  const tawkWidget = useRef();
+
+  const onLoad = () => {
+    tawkWidget.current.hideWidget();
+  };
+
   useEffect(() => {
     gsap.fromTo(
       ".mainheading",
@@ -73,12 +78,25 @@ function App() {
         />
         <link rel='icon' href='https://github.com/webtrope.png' />
       </Head>
-      <main className='dark min-h-screen dark:bg-main flex justify-between flex-col'>
+      <main
+        className='dark min-h-screen dark:bg-main
+       flex justify-between flex-col'
+      >
         <TawkMessengerReact
           propertyId='639b6c92daff0e1306dcdc30'
           widgetId='1gkbi07ll'
+          onLoad={onLoad}
+          ref={tawkWidget}
         />
-        <section className='dark bg-white dark:bg-main'>
+        <section className='dark bg-white dark:bg-transparent'>
+          <Button
+            className='fixed bottom-5 right-5 z-50 shadow-lg'
+            onClick={() => {
+              window.Tawk_API.toggle();
+            }}
+          >
+            <span>Chat</span>
+          </Button>
           <Header />
           <div className='min-h-screen py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 flex flex-col justify-center align-center'>
             <div>
@@ -90,7 +108,7 @@ function App() {
                 solutions that help our clients stand out online.
               </div>
             </div>
-            <div className='mainicon flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
+            <div className='mainicon flex flex-col mt-16 my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
               <button
                 onClick={() => {
                   // scroll one section downwards on click
@@ -122,6 +140,7 @@ function App() {
         </section>
         <WhatWeDo />
         <Services />
+        <Examples />
         <Contact />
         <Footer />
       </main>

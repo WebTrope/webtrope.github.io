@@ -112,12 +112,15 @@ function Services() {
             <Card
               title={
                 <>
-                  Hosting /{" "}
-                  <span className='text-xs font-mono'>1 Month Free Trial</span>
+                  Hosting
+                  <br />
+                  <span className='text-base font-mono'>
+                    1 Month Free Trial
+                  </span>
                 </>
               }
               description='
-                We provide hosting services for your website. We also provide domain name registration. This is done as a subscription service.'
+                We provide hosting subscriptions for your website. We also provide domain name registration.'
               icon={
                 <Player
                   autoplay
@@ -130,7 +133,7 @@ function Services() {
             />
           </div>
         </div>
-        <div className='mainicon flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
+        <div className='mainicon flex flex-col mt-16 my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
           <button
             onClick={() => {
               // scroll one section downwards on click
@@ -177,11 +180,9 @@ function Card(props) {
         {icon}
       </div>
       <div className='p-5'>
-        <a href='#'>
-          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-            {title}
-          </h5>
-        </a>
+        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+          {title}
+        </h5>
         <p className='text-justify mb-3 font-normal text-lg text-gray-700 dark:text-gray-400'>
           {description}
         </p>
