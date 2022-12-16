@@ -3,7 +3,7 @@
 import Head from "next/head";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Alert, Button, Spinner } from "flowbite-react";
 import emailjs from "@emailjs/browser";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -16,6 +16,12 @@ function Contact() {
   const [isButtonLoading, setIsButtonLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
+
+  const tawkWidget = useRef();
+
+  const onLoad = () => {
+    tawkWidget.current.hideWidget();
+  };
 
   useEffect(() => {
     gsap.fromTo(
@@ -60,7 +66,17 @@ function Contact() {
           <TawkMessengerReact
             propertyId='639b6c92daff0e1306dcdc30'
             widgetId='1gkbi07ll'
+            ref={tawkWidget}
+            onLoad={onLoad}
           />
+          <Button
+            className='fixed bottom-5 right-5 z-50 shadow-lg'
+            onClick={() => {
+              window.Tawk_API.toggle();
+            }}
+          >
+            <span>Chat</span>
+          </Button>
           <section className='dark bg-gray-50 dark:bg-main'>
             <Header />
             {isFailure && (

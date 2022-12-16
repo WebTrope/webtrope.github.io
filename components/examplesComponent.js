@@ -68,7 +68,7 @@ function Examples() {
     <>
       <section
         id='examples'
-        className='min-h-screen w-full bg-slate-100 dark:bg-slate-700/10 p-12 flex flex-col '
+        className='min-h-screen w-full bg-transparent p-12 flex flex-col '
       >
         <div className='gap-8 items-center py-8 px-4 mx-auto sm:py-16 lg:px-6'>
           <h1 className='examplesheading mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-indigo-200 '>
@@ -109,35 +109,6 @@ function Examples() {
               className='card2'
             />
           </div>
-        </div>
-
-        <div className='mainicon flex flex-col mt-16 my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
-          <button
-            onClick={() => {
-              // scroll one section downwards on click
-              window.scrollBy({
-                top: window.innerHeight,
-                left: 0,
-                behavior: "smooth",
-              });
-            }}
-            className='animate-bounce inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 dark:focus:ring-primary-900'
-          >
-            <svg
-              className='w-6 h-6'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
-                d='M19 9l-7 7-7-7'
-              ></path>
-            </svg>
-          </button>
         </div>
       </section>
     </>

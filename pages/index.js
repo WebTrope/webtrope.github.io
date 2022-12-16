@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Services from "../components/services";
 import Contact from "../components/contact";
-import Examples from "../components/examples";
+import Examples from "../components/examplesComponent";
 import { Button } from "flowbite-react";
 
 function App() {
@@ -140,7 +140,37 @@ function App() {
         </section>
         <WhatWeDo />
         <Services />
-        <Examples />
+        <div className='bg-slate-700/10'>
+          <Examples />
+          <div className='mainicon flex flex-col my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4'>
+            <button
+              onClick={() => {
+                // scroll one section downwards on click
+                window.scrollBy({
+                  top: window.innerHeight,
+                  left: 0,
+                  behavior: "smooth",
+                });
+              }}
+              className='animate-bounce inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 dark:focus:ring-primary-900'
+            >
+              <svg
+                className='w-6 h-6'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M19 9l-7 7-7-7'
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
         <Contact />
         <Footer />
       </main>

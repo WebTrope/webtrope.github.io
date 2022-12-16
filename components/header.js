@@ -84,8 +84,8 @@ function Header() {
             Examples
           </Navbar.Link>
             */}
-          <Navbar.Link className='nav-four' href='https://github.com/webtrope'>
-            GitHub
+          <Navbar.Link className='nav-four' href='/examples'>
+            Examples
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
